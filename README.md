@@ -17,9 +17,9 @@ The motivation is to eliminate the reliance on the costly lab experiments so tha
 
 This is a pytorch implementation of the ATC-CNN proposed in our paper [1].
 
-To run the code, please make sure you have prepared canonical SMILES data (*Computed* *by* *OEChem* *2.3.0*) following the same structure as follows (you can also refer to our ATC-SMILES dataset in this repository):
+To run the code, please make sure you have prepared canonical SMILES data ( *Computed* *by* *OEChem* *2.3.0* ) following the same structure as follows (you can also refer to our ATC-SMILES dataset in this repository):
 
-../data/ATC_SMILES.csv        (ATC-SMILES dataset in our paper [1])
+../data/ATC_SMILES.csv        (ATC-SMILES dataset)
 
 
 
@@ -40,7 +40,7 @@ get_splited_smis(filePath='',smiList=SMILES_List)
 
 ## Embedding
 
-We adopt the Word2Vec and Skip-gram model to train token embedding:
+We adopt the Word2Vec and Skip-gram model to train token embeddings:
 
 ```
 ../models/TextCNN.py
@@ -51,7 +51,7 @@ self.embedding_pretrained=torch.tensor(np.load(dataset+'/data/embedding_SMILES_V
 
 ## Start training
 
-To train a model with the our ATC-SMILES dataset:
+To train a model with our ATC-SMILES dataset:
 
 ```
 ../run.py
