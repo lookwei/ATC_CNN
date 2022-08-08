@@ -2,14 +2,16 @@
 
 ATC (Anatomical Therapeutic Chemical) classification for compounds/drugs plays an important role in drug development and basic research. However, previous methods depend on interactions extracted from STITCH dataset which may make it depends on lab experiments.
 
-We present a pilot study to explore the possibility of conducting the ATC prediction solely based on the molecular structures. 
+We present a pilot study to explore the possibility of conducting the ATC prediction solely based on the molecular structures. The motivation is to eliminate the reliance on the costly lab experiments so that the characteristics of a drug can be pre-assessed for better decision-making and effort-saving before the actual development.
 
-The motivation is to eliminate the reliance on the costly lab experiments so that the characteristics of a drug can be pre-assessed for better decision-making and effort-saving before the actual development.
+Our contributions are as follows:
 
-1. we construct a new benchmark consisting of 4545 compounds which is with larger scale than the one used in previous study. 
+1. We construct a new benchmark consisting of 4545 compounds which is with larger scale than the one used in previous study.
 2. A light-weight prediction model is proposed. The model is with better explainability in the sense that it is consists of a straightforward tokenization that extracts and embeds statistically and physicochemically meaningful tokens, and a deep network backed by a set of pyramid kernels to capture multi-resolution chemical structural characteristics. 
 
-![image](https://github.com/lookwei/ATC_CNN/blob/main/ATC-CNN.png)
+For details, please refer to our paper [1], which will be available in *briefings in Bioinformatics* soon. Besides, an online ATC-codes predictor is available now ! http://47.243.95.243:8090/getAtcLabels/ 
+
+![image](/ATC-CNN.png)
 
 
 
@@ -62,7 +64,7 @@ python run.py
 
 ## Dataset
 
-ATC-SMILES proposed in our paper [1].
+ATC-SMILES dataset proposed in our paper [1].
 
 ```
 ../data/ATC_SMILES.csv
@@ -86,9 +88,6 @@ ATC-SMILES proposed in our paper [1].
 author={Yi Cao, Zhen-Qun Yang, Xu-Lu Zhang, Wenqi Fan, Yaowei Wang, Jiajun Shen, Dong-Qing Wei, Qing Li, and Xiao-Yong Wei.},  
 journal={Briefings in Bioinformatics},   
 title={Identifying The Kind Behind SMILES – Anatomical Therapeutic Chemical Classification using Structure-Only Representations},   
-year={2022},  
-volume={},  
-number={},  
-pages={},  
+year={2022},   
 doi={DOI:10.1093/bib/bbac346}}
 ```
