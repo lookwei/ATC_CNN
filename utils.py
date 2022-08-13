@@ -24,7 +24,7 @@ def get_splited_smis(filePath='./data/splited_smis.txt',smiList=None):
         f.close()
         return splited_smis
     else:
-        gaode_url = 'http://47.243.95.243:8090/tokenizer/'
+        gaode_url = 'http://aimars.net:8090/tokenizer/'
         data = json.dumps({'smi': str(smiList)})
         header = {"Accept": "application/json",
                   'Content-Type': 'application/json',
