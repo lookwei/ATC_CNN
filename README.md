@@ -9,9 +9,9 @@ Our contributions are as follows:
 1. We construct a new benchmark consisting of 4545 compounds which is with larger scale than the one used in previous study.
 2. A light-weight prediction model is proposed. The model is with better explainability in the sense that it is consists of a straightforward tokenization that extracts and embeds statistically and physicochemically meaningful tokens, and a deep network backed by a set of pyramid kernels to capture multi-resolution chemical structural characteristics. 
 
-For details, please refer to our paper [1], which will be available in *briefings in Bioinformatics* soon. Besides, an online ATC-codes predictor is available now ! http://47.243.95.243:8090/getAtcLabels/ 
+For details, please refer to our paper [1], which will be available in *briefings in Bioinformatics* soon. Besides, an online ATC-codes predictor is available now.  http://aimars.net:8090/ATC_SMILES/
 
-![image](/ATC-CNN.png)
+![image](/tokens.png)
 
 
 
@@ -19,11 +19,21 @@ For details, please refer to our paper [1], which will be available in *briefing
 
 This is a pytorch implementation of the ATC-CNN proposed in our paper [1].
 
-To run the code, please make sure you have prepared canonical SMILES data ( *Computed* *by* *OEChem* *2.3.0* ) following the same structure as follows (you can also refer to our ATC-SMILES dataset in this repository):
+**[Step 1: Prepare dataset](#Datasets)**
 
-../data/ATC_SMILES.csv        (ATC-SMILES dataset)
+To run the code, please make sure you have prepared canonical SMILES data ( *Computed* *by* *OEChem* *2.3.0* ) following the same data structure in ../data/ATC_SMILES.csv.
 
+**[Step 2: Tokenization](#Tokenization)**
 
+We have provided tokenized ATC-SMILES dataset, if you want to use other canonical SMILES, please use tokenization API in ./utils.py.
+
+**[Step 3: Embedding](#Embedding)**
+
+We adopt the Word2Vec and Skip-gram model to train token embeddings, you can use our pre-trained embeddings in ../data/embedding_SMILES_Vocab.npz.
+
+**[Step 4: Start training](#Start training)**
+
+If you don't care other details, just start training in ./run.py.
 
 ## Tokenization
 
@@ -56,15 +66,17 @@ self.embedding_pretrained=torch.tensor(np.load(dataset+'/data/embedding_SMILES_V
 To train a model with our ATC-SMILES dataset:
 
 ```
-../run.py
+./run.py
 python run.py
 ```
 
 
 
-## Dataset
+## Datasets
 
-ATC-SMILES dataset proposed in our paper [1].
+**ATC-SMILES dataset proposed in our paper [1] with 4545 drugs/compounds.**
+
+If you plan to use other smiles files, please refer to the data structure in [ATC_SMILES.csv](../data/ATC_SMILES.csv)
 
 ```
 ../data/ATC_SMILES.csv
@@ -77,6 +89,13 @@ ATC-SMILES dataset proposed in our paper [1].
 | ...  |     ...      |                             ...                              |                    ...                     |
 | 4544 |    D11817    | CNC(=O)C1=NN=C(C=<br/>C1NC2=CC=CC(=C2OC)C3=NN<br/>(C=N3)C)NC(=O)C4CC4 | [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0] |
 
+**Chen-2012 dataset proposed in our paper [2] with 3883 drugs/compounds.**
+
+Chen-2012 dataset is available in  [Chen-2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0035254) 
+
+**ATC-SMILES-Aligned dataset proposed in our paper [1] with 3785 drugs/compounds.**
+
+ATC-SMILES is with a larger scale than that of Chen-2012 [2], but there are some mis-aligned items. We remove these items to generate a subset consisting of 3785 drugs/compounds, and we call this set ATC-SMILES-Aligned. ATC-SMILES-Aligned can be downloaded in [ATC-SMILES-Aligned.csv](../data/ATC-SMILES-Aligned.csv).
 
 
 ## Citation
@@ -91,3 +110,7 @@ title={Identifying The Kind Behind SMILES – Anatomical Therapeutic Chemical Cl
 year={2022},   
 doi={DOI:10.1093/bib/bbac346}}
 ```
+
+## Reference
+
+[2] Chen L, Zeng WM, Cai YD, Feng KY, Chou KC. Predicting Anatomical Therapeutic Chemical (ATC) classification of drugs by integrating chemical-chemical interactions and similarities. *PLoS One*. 2012;7(4):e35254.
