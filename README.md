@@ -31,7 +31,7 @@ We have provided tokenized ATC-SMILES dataset, if you want to use other canonica
 
 We adopt the Word2Vec and Skip-gram model to train token embeddings, you can use our pre-trained embeddings in ../data/embedding_SMILES_Vocab.npz.
 
-**[Step 4: Training](#Start training)**
+**[Step 4: Start training](#Start training)**
 
 If you don't care other details, just start training in ./run.py.
 
@@ -76,7 +76,7 @@ python run.py
 
 **ATC-SMILES dataset proposed in our paper [1] with 4545 drugs/compounds.**
 
-If you plan to use other smiles files, please refer to the data structure in [ATC_SMILES.csv](./data/ATC_SMILES.csv)
+If you plan to use other smiles files, please refer to the data structure in [ATC_SMILES.csv](./data/ATC_SMILES.csv).
 
 ```
 ./data/ATC_SMILES.csv
@@ -89,9 +89,9 @@ If you plan to use other smiles files, please refer to the data structure in [AT
 | ...  |     ...      |                             ...                              |                    ...                     |
 | 4544 |    D11817    | CNC(=O)C1=NN=C(C=<br/>C1NC2=CC=CC(=C2OC)C3=NN<br/>(C=N3)C)NC(=O)C4CC4 | [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0] |
 
-**Chen-2012 dataset proposed in our paper [2] with 3883 drugs/compounds.**
+**Chen-2012 dataset proposed in paper[2] with 3883 drugs/compounds.**
 
-Chen-2012 dataset is available in  [Chen-2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0035254) 
+Chen-2012 dataset is available in  [Chen-2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0035254) .
 
 **ATC-SMILES-Aligned dataset proposed in our paper [1] with 3785 drugs/compounds.**
 
