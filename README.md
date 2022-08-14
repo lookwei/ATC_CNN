@@ -21,7 +21,7 @@ This is a pytorch implementation of the ATC-CNN proposed in our paper [1].
 
 **[Step 1: Prepare dataset](#Datasets)**
 
-To run the code, please make sure you have prepared canonical SMILES data ( *Computed* *by* *OEChem* *2.3.0* ) following the same data structure in ../data/ATC_SMILES.csv.
+To run the code, please make sure you have prepared canonical SMILES data ( *Computed* *by* *OEChem* *2.3.0* ) following the same data structure in ./data/ATC_SMILES.csv.
 
 **[Step 2: Tokenization](#Tokenization)**
 
@@ -31,7 +31,7 @@ We have provided tokenized ATC-SMILES dataset, if you want to use other canonica
 
 We adopt the Word2Vec and Skip-gram model to train token embeddings, you can use our pre-trained embeddings in ../data/embedding_SMILES_Vocab.npz.
 
-**[Step 4: Start training](#Start training)**
+**[Step 4: Training](#Start training)**
 
 If you don't care other details, just start training in ./run.py.
 
@@ -76,10 +76,10 @@ python run.py
 
 **ATC-SMILES dataset proposed in our paper [1] with 4545 drugs/compounds.**
 
-If you plan to use other smiles files, please refer to the data structure in [ATC_SMILES.csv](../data/ATC_SMILES.csv)
+If you plan to use other smiles files, please refer to the data structure in [ATC_SMILES.csv](./data/ATC_SMILES.csv)
 
 ```
-../data/ATC_SMILES.csv
+./data/ATC_SMILES.csv
 ```
 
 |      | KEGG_Drug_ID |                          CanSmiles                           |                   Lable                    |
@@ -95,7 +95,7 @@ Chen-2012 dataset is available in  [Chen-2012](https://journals.plos.org/plosone
 
 **ATC-SMILES-Aligned dataset proposed in our paper [1] with 3785 drugs/compounds.**
 
-ATC-SMILES is with a larger scale than that of Chen-2012 [2], but there are some mis-aligned items. We remove these items to generate a subset consisting of 3785 drugs/compounds, and we call this set ATC-SMILES-Aligned. ATC-SMILES-Aligned can be downloaded in [ATC-SMILES-Aligned.csv](../data/ATC-SMILES-Aligned.csv).
+ATC-SMILES is with a larger scale than that of Chen-2012 [2], but there are some mis-aligned items. We remove these items to generate a subset consisting of 3785 drugs/compounds, and we call this set ATC-SMILES-Aligned. ATC-SMILES-Aligned can be downloaded in [ATC-SMILES-Aligned.csv](./data/ATC-SMILES-Aligned.csv).
 
 
 ## Citation
