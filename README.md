@@ -17,7 +17,7 @@ For details, please refer to our paper [1], which will be available in *briefing
 
 ## Quick tour
 
-This is a pytorch implementation of the ATC-CNN proposed in our paper [1].
+This is a pytorch implementation of the ATC-CNN proposed in our paper [1]. If you don't care details, just start training in ./run.py.
 
 **[Step 1: Prepare dataset](#Datasets)**
 
@@ -29,11 +29,7 @@ We have provided tokenized ATC-SMILES dataset, if you want to use other canonica
 
 **[Step 3: Embedding](#Embedding)**
 
-We adopt the Word2Vec and Skip-gram model to train token embeddings, you can use our pre-trained embeddings in ../data/embedding_SMILES_Vocab.npz.
-
-**[Step 4: Start training](#Start training)**
-
-If you don't care other details, just start training in ./run.py.
+We adopt the Word2Vec and Skip-gram model to train token embeddings, you can use our pre-trained embeddings in ./data/embedding_SMILES_Vocab.npz.
 
 ## Tokenization
 
@@ -55,7 +51,7 @@ get_splited_smis(filePath='',smiList=SMILES_List)
 We adopt the Word2Vec and Skip-gram model to train token embeddings:
 
 ```
-../models/TextCNN.py
+./models/TextCNN.py
 self.embedding_pretrained=torch.tensor(np.load(dataset+'/data/embedding_SMILES_Vocab.npz')["embeddings"].astype('float32')) if embedding != 'random' else None
 ```
 
